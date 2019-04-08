@@ -12,12 +12,27 @@ export function Header(props, context) {
   );
 
   return (
-    <div className={styles.header}>
-      <div className={styles['language-switcher']}>
-        <ul>
-          <li><FormattedMessage id="switchLanguage" /></li>
-          {languageNodes}
-        </ul>
+     <div className={styles.header}>
+      <div className={styles['nav-container']}>
+        <div className={styles['nav-bar']}>
+          <ul>
+            <li>
+              <Link to="/" ><button className={styles['btn-nav']}>Posts</button></Link>     
+            </li>
+            <li>
+              <Link to="/home" ><button className={styles['btn-nav']}>Home</button></Link>
+            </li>
+            <li>
+              <Link to="/about" ><button className={styles['btn-nav']}>About</button></Link>
+            </li>
+          </ul>
+          <div className={styles['language-switcher']}>
+            <ul>
+              <li><FormattedMessage id="switchLanguage" /></li>
+              {languageNodes}
+            </ul>
+          </div>
+        </div>
       </div>
       <div className={styles.content}>
         <h1 className={styles['site-title']}>
